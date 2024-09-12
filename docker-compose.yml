@@ -15,9 +15,9 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_DB: dpg-crhdj656l47c73c6tir0-a
-      POSTGRES_USER: filestorage_golang_user
-      POSTGRES_PASSWORD: iZDxfjRUvSZXM96NFtG9B2oLG66ANeo6
+      POSTGRES_DB: db_name
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: db_password
     ports:
       - "5433:5432"
     volumes:
