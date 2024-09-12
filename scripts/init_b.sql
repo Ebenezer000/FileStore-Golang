@@ -1,0 +1,13 @@
+CREATE TABLE file_chunks (
+    id SERIAL PRIMARY KEY,
+    file_id VARCHAR(255) NOT NULL,
+    chunk_data BYTEA NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE files (
+    id VARCHAR(255) PRIMARY KEY,
+    file_name VARCHAR(255),
+    file_size BIGINT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

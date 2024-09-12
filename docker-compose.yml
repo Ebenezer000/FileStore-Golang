@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: dpg-crhdj656l47c73c6tir0-a
+      POSTGRES_USER: filestorage_golang_user
+      POSTGRES_PASSWORD: iZDxfjRUvSZXM96NFtG9B2oLG66ANeo6
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
